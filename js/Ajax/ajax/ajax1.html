@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"> Here we have to load data</p>
+    <button onclick="loadDta()">Click me </button>
+
+    <script>
+        // function loadDta() {
+        //     // object creation
+        //  var xhr = new XMLHttpRequest(); 
+        //  // status chacking
+        //  xhr.onreadystatechange = function(){
+        //     if(xhr.readyState== 4 && xhr.status== 200){
+        //         var val = xhr.responseText;
+        //         console.log(this.responseText);
+        //          document.getElementById("demo").innerHTML = val;
+             
+        //     }
+        //     // to handle the error 
+        //     else if(this.responseText==4 &&this.status==404){
+        //         console.log(" fail to load ");
+        //     }
+        //  }
+        //  xhr.open("GET","./texfile.txt",true);
+        //  xhr.send()
+
+        // using with fake jsion data
+
+        function loadDta() {
+            // object creation
+         var xhr = new XMLHttpRequest(); 
+         // status chacking
+         xhr.onreadystatechange = function(){
+            if(xhr.readyState== 4 && xhr.status== 200){
+                var val = xhr.responseText;
+                console.log(this.responseText);
+                 document.getElementById("demo").innerHTML = val;
+             
+            }
+            // to handle the error 
+            else if(this.responseText==4 &&this.status==404){
+                console.log(" fail to load ");
+            }
+         }
+         // here i am just past the dummy 100 post data link to 
+         // show this data on my website 
+         xhr.open("GET","https://jsonplaceholder.typicode.com/posts",true);
+         xhr.send()
+
+        }
+    </script>
+</body>
+</html>
